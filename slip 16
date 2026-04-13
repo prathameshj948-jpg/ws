@@ -1,0 +1,47 @@
+🧾 SLIP 16 – Q1
+
+<?php
+$conn = mysqli_connect("localhost", "root", "", "test_db");
+
+if(isset($_GET["login"])) {
+    $username = $_GET['username'];
+    $password = $_GET['password'];
+
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+
+    echo "Query: $sql <br><br>";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        echo "<h2 style='color:green'>Login Successful as: " . $user['username'] . "</h2>";
+    } else {
+        echo "<h2 style='color:red'>Login Failed</h2>";
+    }
+}
+?>
+
+<form method="get">
+Username: <input name="username"><br><br>
+Password: <input name="password"><br><br>
+<button name="login">Login</button>
+</form>
+
+
+🧾 SLIP 16 – Q2 (WRITE THIS EXACTLY)
+Burp Suite Scanner
+
+Burp Suite Scanner is a tool used to find security vulnerabilities in web applications.
+It automatically scans websites for issues like SQL Injection, XSS, etc.
+
+Features:
+Automated scanning
+Detects vulnerabilities
+Intercepts HTTP requests
+Provides detailed reports
+Example:
+
+While testing a login page, Burp Suite Scanner detects a SQL Injection vulnerability in the username field.
+
+ Burp Suite Scanner is used to identify web vulnerabilities automatically.
