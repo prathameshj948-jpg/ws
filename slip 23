@@ -1,0 +1,127 @@
+🧾 SLIP 23 – Q1
+
+<html>
+<body>
+
+<table border="1" width="100%">
+<tr>
+
+<!-- Column 1 -->
+<td width="30%">
+<h3>Menu</h3>
+<a href="#">Home</a><br><br>
+<a href="#">About Us</a><br><br>
+<a href="#hr">Contact HR</a>
+</td>
+
+<!-- Column 2 -->
+<td>
+
+<h2>Employee Profile</h2>
+
+<table>
+<tr><td>ID:</td><td>101</td></tr>
+<tr><td>Name:</td><td>Soham</td></tr>
+<tr><td>Designation:</td><td>Developer</td></tr>
+<tr><td>Department:</td><td>IT</td></tr>
+<tr><td>Email:</td><td>soham@gmail.com</td></tr>
+</table>
+
+<br>
+
+<img src="photo.jpg" width="120"><br><br>
+
+<!-- HR DETAILS -->
+<h3 id="hr">HR Department Details</h3>
+
+<table border="1">
+<tr><th>Department</th><th>Email</th><th>Phone</th></tr>
+<tr>
+<td>HR</td>
+<td>hr@company.com</td>
+<td>9876543210</td>
+</tr>
+</table>
+
+<br>
+
+<!-- FORM -->
+<h3>Add New Employee</h3>
+
+<form>
+<table>
+
+<tr><td>Name:</td><td><input type="text"></td></tr>
+<tr><td>Employee ID:</td><td><input type="text"></td></tr>
+<tr><td>Designation:</td><td><input type="text"></td></tr>
+<tr><td>Department:</td><td><input type="text"></td></tr>
+<tr><td>Email:</td><td><input type="text"></td></tr>
+<tr><td>Phone:</td><td><input type="text"></td></tr>
+
+<tr>
+<td colspan="2">
+<input type="submit" value="Submit">
+</td>
+</tr>
+
+</table>
+</form>
+
+</td>
+
+</tr>
+</table>
+
+</body>
+</html>
+
+
+
+🧾 SLIP 23 – Q2
+
+<html>
+<body>
+
+<h2>Feedback Form</h2>
+
+<form method="post">
+Name: <input type="text" name="name"><br><br>
+Email: <input type="text" name="email"><br><br>
+
+Feedback:<br>
+<textarea name="msg"></textarea><br><br>
+
+Rating:
+<select name="rate">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select><br><br>
+
+<input type="submit" value="Submit">
+</form>
+
+<?php
+if($_POST){
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $msg = $_POST['msg'];
+    $rate = $_POST['rate'];
+
+    echo "<h3>Feedback Details</h3>";
+    echo "Name: $name <br>";
+    echo "Email: $email <br>";
+    echo "Feedback: $msg <br>";
+    echo "Rating: ";
+
+    for($i=1; $i<=$rate; $i++){
+        echo "⭐";
+    }
+}
+?>
+
+</body>
+</html>
