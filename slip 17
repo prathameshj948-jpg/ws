@@ -1,0 +1,83 @@
+🧾 SLIP 17 – Q1
+
+<html>
+<body>
+
+<form method="post">
+Book (100): <input type="number" name="book"><br><br>
+Pen (20): <input type="number" name="pen"><br><br>
+Bag (500): <input type="number" name="bag"><br><br>
+
+<input type="submit" value="Calculate">
+</form>
+
+<?php
+if($_POST) {
+    $book = $_POST['book'];
+    $pen = $_POST['pen'];
+    $bag = $_POST['bag'];
+
+    $total_qty = $book + $pen + $bag;
+    $total_cost = ($book*100) + ($pen*20) + ($bag*500);
+
+    echo "Total Quantity: $total_qty <br>";
+    echo "Total Cost: $total_cost";
+}
+?>
+
+</body>
+</html>
+
+
+🧾 SLIP 17 – Q2
+
+<?php
+
+$xml = new SimpleXMLElement('<CourseRegistrations/>');
+
+// Record 1
+$r1 = $xml->addChild('Registration');
+$r1->addChild('ID', '1');
+$r1->addChild('StudentName', 'Soham');
+$r1->addChild('CourseName', 'Cyber Security');
+$r1->addChild('Instructor', 'Prof. A');
+$r1->addChild('Date', '2024-01-10');
+
+// Record 2
+$r2 = $xml->addChild('Registration');
+$r2->addChild('ID', '2');
+$r2->addChild('StudentName', 'Rahul');
+$r2->addChild('CourseName', 'Web Science');
+$r2->addChild('Instructor', 'Prof. B');
+$r2->addChild('Date', '2024-01-12');
+
+// Record 3
+$r3 = $xml->addChild('Registration');
+$r3->addChild('ID', '3');
+$r3->addChild('StudentName', 'Priya');
+$r3->addChild('CourseName', 'Data Science');
+$r3->addChild('Instructor', 'Prof. C');
+$r3->addChild('Date', '2024-01-15');
+
+// Record 4
+$r4 = $xml->addChild('Registration');
+$r4->addChild('ID', '4');
+$r4->addChild('StudentName', 'Anjali');
+$r4->addChild('CourseName', 'AI');
+$r4->addChild('Instructor', 'Prof. D');
+$r4->addChild('Date', '2024-01-18');
+
+// Record 5
+$r5 = $xml->addChild('Registration');
+$r5->addChild('ID', '5');
+$r5->addChild('StudentName', 'Amit');
+$r5->addChild('CourseName', 'Cloud Computing');
+$r5->addChild('Instructor', 'Prof. E');
+$r5->addChild('Date', '2024-01-20');
+
+// Save file
+$xml->asXML("CourseRegistrations.xml");
+
+echo "XML Created";
+
+?>
