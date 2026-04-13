@@ -1,0 +1,57 @@
+🧾 SLIP 15 – Q1 (WRITE THIS EXACTLY)
+
+
+a) Identified Threat:
+
+The identified threat is SQL Injection, where an attacker inserts malicious SQL queries into input fields.
+
+b) Exploitation:
+
+The attacker enters input like ' OR 1=1 -- in the login form.
+This bypasses authentication and allows unauthorized access.
+
+c) Mitigation Steps:
+Use prepared statements
+Validate user input
+Use parameterized queries
+Apply proper authentication
+Use web application firewall
+
+
+
+🧾 SLIP 15 – Q2
+
+<?php
+
+$xml = new SimpleXMLElement('<Timetable/>');
+
+// Record 1
+$c1 = $xml->addChild('Class');
+$c1->addChild('Day', 'Monday');
+$c1->addChild('ClassName', 'Web Science');
+$c1->addChild('Instructor', 'Prof. A');
+$c1->addChild('Time', '10:00 AM');
+$c1->addChild('Room', '101');
+
+// Record 2
+$c2 = $xml->addChild('Class');
+$c2->addChild('Day', 'Tuesday');
+$c2->addChild('ClassName', 'Cyber Security');
+$c2->addChild('Instructor', 'Prof. B');
+$c2->addChild('Time', '12:00 PM');
+$c2->addChild('Room', '102');
+
+// Record 3
+$c3 = $xml->addChild('Class');
+$c3->addChild('Day', 'Wednesday');
+$c3->addChild('ClassName', 'Data Science');
+$c3->addChild('Instructor', 'Prof. C');
+$c3->addChild('Time', '2:00 PM');
+$c3->addChild('Room', '103');
+
+// Save file
+$xml->asXML("Timetable.xml");
+
+echo "XML Created";
+
+?>
