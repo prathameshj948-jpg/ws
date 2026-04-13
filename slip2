@@ -1,0 +1,63 @@
+🧾 SLIP 2 – Q1 
+
+<?php
+
+// Create XML object
+$xml = new SimpleXMLElement('<Subjects/>');
+
+// Add records
+$subject1 = $xml->addChild('Subject');
+$subject1->addChild('SubjectID', '101');
+$subject1->addChild('SubjectName', 'Web Science');
+$subject1->addChild('Class', 'TY');
+$subject1->addChild('Semester', '6');
+
+$subject2 = $xml->addChild('Subject');
+$subject2->addChild('SubjectID', '102');
+$subject2->addChild('SubjectName', 'Cyber Security');
+$subject2->addChild('Class', 'TY');
+$subject2->addChild('Semester', '6');
+
+$subject3 = $xml->addChild('Subject');
+$subject3->addChild('SubjectID', '103');
+$subject3->addChild('SubjectName', 'Data Science');
+$subject3->addChild('Class', 'TY');
+$subject3->addChild('Semester', '6');
+
+// Save file
+$xml->asXML("Subject.xml");
+
+echo "XML file created successfully";
+
+
+
+🧾 SLIP 2 – Q2
+<?php
+$conn = mysqli_connect("localhost", "root", "", "test_db");
+
+if (isset($_GET["login"])) {
+    $username = $_GET["username"];
+    $password = $_GET["password"];
+    
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    
+    echo "Query: $sql <br><br>";
+    
+    $result = mysqli_query($conn, $sql);
+    
+    if ($result && mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        echo "<h2 style='color:green'>Login Successful as: " . $user['username'] . "</h2>";
+    } else {
+        echo "<h2 style='color:red'>Login Failed</h2>";
+    }
+}
+?>
+
+<form method="get">
+    Username: <input name="username"><br><br>
+    Password: <input name="password"><br><br>
+    <button name="login">Login</button>
+</form>
+
+?>
