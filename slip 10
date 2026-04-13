@@ -1,0 +1,106 @@
+🧾 SLIP 10 – Q1
+
+<?php
+
+$xml = new SimpleXMLElement('<Students/>');
+
+// Student 1
+$s1 = $xml->addChild('Student');
+$s1->addChild('ID', '1');
+$s1->addChild('Name', 'Soham');
+$s1->addChild('Age', '20');
+$s1->addChild('Gender', 'Male');
+$s1->addChild('Program', 'Cyber');
+
+// Student 2
+$s2 = $xml->addChild('Student');
+$s2->addChild('ID', '2');
+$s2->addChild('Name', 'Rahul');
+$s2->addChild('Age', '21');
+$s2->addChild('Gender', 'Male');
+$s2->addChild('Program', 'IT');
+
+// Student 3
+$s3 = $xml->addChild('Student');
+$s3->addChild('ID', '3');
+$s3->addChild('Name', 'Priya');
+$s3->addChild('Age', '20');
+$s3->addChild('Gender', 'Female');
+$s3->addChild('Program', 'CS');
+
+// Student 4
+$s4 = $xml->addChild('Student');
+$s4->addChild('ID', '4');
+$s4->addChild('Name', 'Anjali');
+$s4->addChild('Age', '22');
+$s4->addChild('Gender', 'Female');
+$s4->addChild('Program', 'AI');
+
+// Student 5
+$s5 = $xml->addChild('Student');
+$s5->addChild('ID', '5');
+$s5->addChild('Name', 'Amit');
+$s5->addChild('Age', '21');
+$s5->addChild('Gender', 'Male');
+$s5->addChild('Program', 'Data Science');
+
+// Save file
+$xml->asXML("Student.xml");
+
+echo "XML Created";
+
+?>
+
+
+🧾 SLIP 10 – Q2
+
+<?php
+
+$xml = new SimpleXMLElement('<Employees/>');
+
+// Employee 1
+$e1 = $xml->addChild('Employee');
+$e1->addChild('ID', '101');
+$e1->addChild('Name', 'Soham');
+$e1->addChild('Position', 'Developer');
+$e1->addChild('Department', 'IT');
+$e1->addChild('DOJ', '2023-01-10');
+
+// Employee 2
+$e2 = $xml->addChild('Employee');
+$e2->addChild('ID', '102');
+$e2->addChild('Name', 'Rahul');
+$e2->addChild('Position', 'Manager');
+$e2->addChild('Department', 'HR');
+$e2->addChild('DOJ', '2022-05-15');
+
+// Employee 3
+$e3 = $xml->addChild('Employee');
+$e3->addChild('ID', '103');
+$e3->addChild('Name', 'Priya');
+$e3->addChild('Position', 'Analyst');
+$e3->addChild('Department', 'Finance');
+$e3->addChild('DOJ', '2023-03-20');
+
+// Employee 4
+$e4 = $xml->addChild('Employee');
+$e4->addChild('ID', '104');
+$e4->addChild('Name', 'Anjali');
+$e4->addChild('Position', 'Tester');
+$e4->addChild('Department', 'QA');
+$e4->addChild('DOJ', '2024-02-01');
+
+// Employee 5
+$e5 = $xml->addChild('Employee');
+$e5->addChild('ID', '105');
+$e5->addChild('Name', 'Amit');
+$e5->addChild('Position', 'Support');
+$e5->addChild('Department', 'IT');
+$e5->addChild('DOJ', '2023-07-12');
+
+// Save file
+$xml->asXML("Employees.xml");
+
+echo "XML Created";
+
+?>
