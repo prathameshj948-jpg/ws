@@ -1,0 +1,103 @@
+🧾 SLIP 6 – Q1
+
+
+<?php
+$result = "";
+if (isset($_GET["num"])) {
+    $num = $_GET["num"];
+    $rev = strrev($num);
+    $result = ($num == $rev) ? "Palindrome" : "Not Palindrome";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+
+<h2>Palindrome Checker</h2>
+
+<form method="get">
+    <input type="number" name="num" placeholder="Enter a number">
+    <button type="submit">Check</button>
+</form>
+
+<?php
+if ($result != "") {
+    echo "<h3>$result</h3>";
+}
+?>
+
+</body>
+
+
+
+
+🧾 SLIP 6 – Q2
+//XML-CODE
+<?xml version="1.0"?>
+<Cars>
+
+<Car>
+    <ID>1</ID>
+    <Company>Toyota</Company>
+    <Model>Innova</Model>
+    <Engine>2000cc</Engine>
+    <Mileage>15kmpl</Mileage>
+</Car>
+
+<Car>
+    <ID>2</ID>
+    <Company>Honda</Company>
+    <Model>City</Model>
+    <Engine>1500cc</Engine>
+    <Mileage>18kmpl</Mileage>
+</Car>
+
+</Cars>
+</html>
+
+
+
+
+
+
+
+
+///XSLT (cars.xsl)code///
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+
+<html>
+<body>
+
+<table border="1">
+<tr>
+<th>ID</th><th>Company</th><th>Model</th>
+<th>Engine</th><th>Mileage</th>
+</tr>
+
+<xsl:for-each select="Cars/Car">
+<tr>
+<td><xsl:value-of select="ID"/></td>
+<td><xsl:value-of select="Company"/></td>
+<td><xsl:value-of select="Model"/></td>
+<td><xsl:value-of select="Engine"/></td>
+<td><xsl:value-of select="Mileage"/></td>
+</tr>
+</xsl:for-each>
+
+</table>
+
+</body>
+</html>
+
+</xsl:template>
+</xsl:stylesheet>
+
+
