@@ -1,0 +1,58 @@
+🧾 SLIP 14 – Q1
+
+<html>
+<body>
+
+<form method="post">
+
+Book (100): <input type="number" name="book"><br><br>
+Pen (20): <input type="number" name="pen"><br><br>
+Bag (500): <input type="number" name="bag"><br><br>
+
+<input type="submit" value="Calculate">
+
+</form>
+
+<?php
+if($_POST){
+
+    $book = $_POST['book'];
+    $pen = $_POST['pen'];
+    $bag = $_POST['bag'];
+
+    $total_qty = $book + $pen + $bag;
+    $total_cost = ($book*100) + ($pen*20) + ($bag*500);
+
+    echo "Total Quantity: $total_qty <br>";
+    echo "Total Cost: $total_cost";
+
+}
+?>
+
+</body>
+</html>
+
+🧾 SLIP 14 – Q2 (WRITE THIS EXACTLY THEORY)
+
+
+OWASP Top 10 — 2025
+A01 — Broken Access Control
+Users accessing resources beyond their permissions.
+A02 — Security Misconfiguration
+Misconfigured systems, cloud, APIs etc.
+A03 — Software Supply Chain Failures
+Issues in dependencies and software ecosystem.
+A04 — Insecure Design
+Flaws in system design.
+A05 — Cryptographic Failures
+Weak or missing encryption.
+A06 — Injection
+SQL Injection, command injection etc.
+A07 — Identification & Authentication Failures
+Weak login systems.
+A08 — Software and Data Integrity Failures
+Untrusted updates or data.
+A09 — Security Logging & Monitoring Failures
+No logging or alert system.
+A10 — Mishandling of Exceptional Conditions
+Errors not handled properly.
