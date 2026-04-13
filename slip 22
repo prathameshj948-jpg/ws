@@ -1,0 +1,56 @@
+🧾 SLIP 22 – Q1
+
+OWASP API Security Top 10 — 2023
+API1 — Broken Object Level Authorization (BOLA)
+Users access other users’ data by changing IDs.
+API2 — Broken Authentication
+Weak or missing authentication system.
+API3 — Broken Object Property Level Authorization
+Extra data exposure or modification allowed.
+API4 — Unrestricted Resource Consumption
+No limits → leads to DoS attacks.
+API5 — Broken Function Level Authorization
+Normal users access admin functions.
+API6 — Unrestricted Access to Sensitive Business Flows
+No protection on important processes.
+API7 — Server Side Request Forgery (SSRF)
+Server makes requests to internal systems.
+API8 — Security Misconfiguration
+Default settings, open ports, missing headers.
+API9 — Improper Inventory Management
+Old APIs left active.
+API10 — Unsafe Consumption of APIs
+Trusting external APIs without validation.
+
+
+
+🧾 SLIP 22 – Q2
+
+<html>
+<body>
+
+<form method="post">
+Username: <input type="text" name="user"><br><br>
+Password: <input type="password" name="pass"><br><br>
+<input type="submit" value="Check">
+</form>
+
+<?php
+if($_POST){
+
+    $pass = $_POST['pass'];
+
+    if(strlen($pass) > 8 &&
+       preg_match("/[A-Za-z]/", $pass) &&
+       preg_match("/[0-9]/", $pass) &&
+       preg_match("/[@$!%*#?&]/", $pass)){
+
+        echo "You entered strong password";
+    } else {
+        echo "Enter complex password";
+    }
+}
+?>
+
+</body>
+</html>
