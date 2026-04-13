@@ -1,0 +1,55 @@
+SLIP 8 – Q1
+
+
+<html>
+<body>
+
+<p style="color:red;">This is Red</p>
+<p style="color:blue;">This is Blue</p>
+<p style="color:green;">This is Green</p>
+<p style="color:yellow;">This is Yellow</p>
+<p style="color:orange;">This is Orange</p>
+<p style="color:purple;">This is Purple</p>
+<p style="color:brown;">This is Brown</p>
+
+</body>
+</html>
+
+
+
+
+
+🧾 SLIP 8 – Q2
+
+<html>
+<body>
+
+<h2>Password Validation</h2>
+
+<form method="post">
+Enter Password:
+<input type="password" name="password"><br><br>
+
+<input type="submit" value="Check Password">
+</form>
+
+<?php
+
+if($_POST){
+
+    $password = $_POST['password'];
+
+    if(strlen($password) > 8 &&
+       preg_match("/[A-Za-z]/", $password) &&
+       preg_match("/[0-9]/", $password) &&
+       preg_match("/[@$!%*#?&]/", $password)){
+
+        echo "You entered strong password";
+    } else {
+        echo "Enter complex password";
+    }
+}
+?>
+
+</body>
+</html>
