@@ -1,0 +1,81 @@
+🧾 SLIP 25 – Q1 
+
+SQL Injection Attack on UPDATE Statement
+Objective:
+To demonstrate how SQL Injection can be used to modify another user's profile without authorization.
+
+Step 1: Setup Database
+Use same database test_db, add column bio in users table.
+
+Step 2: Vulnerable Code
+
+
+
+
+<?php
+$conn = mysqli_connect("localhost", "root", "", "test_db");
+
+if (isset($_GET["update"])) {
+    $username = $_GET["username"];
+    $new_bio = $_GET["bio"];
+
+    $sql = "UPDATE users SET bio='$new_bio' WHERE username='$username'";
+    echo "Query: $sql <br>";
+
+    mysqli_query($conn, $sql);
+    echo "<h2>Updated!</h2>";
+}
+
+$result = mysqli_query($conn, "SELECT * FROM users");
+
+while($row = mysqli_fetch_assoc($result)) {
+    echo "User: {$row['username']} | Bio: {$row['bio']}<br>";
+}
+?>
+
+<form method="get">
+Username: <input name="username"><br>
+New Bio: <input name="bio"><br>
+<button name="update">Update</button>
+</form>
+
+
+Step 3: Attack
+Enter:
+admin' --
+
+
+
+🧾 SLIP 25 – Q2
+
+<?php
+
+$xml = new SimpleXMLElement('<Cricket/>');
+
+// Team 1
+$t1 = $xml->addChild('Team');
+$t1->addAttribute('country', 'Australia');
+$t1->addChild('Player', 'Smith');
+$t1->addChild('Runs', '5000');
+$t1->addChild('Wicket', '50');
+
+// Team 2
+$t2 = $xml->addChild('Team');
+$t2->addAttribute('country', 'Australia');
+$t2->addChild('Player', 'Warner');
+$t2->addChild('Runs', '6000');
+$t2->addChild('Wicket', '20');
+
+// Team 3
+$t3 = $xml->addChild('Team');
+$t3->addAttribute('country', 'Australia');
+$t3->addChild('Player', 'Maxwell');
+$t3->addChild('Runs', '4000');
+$t3->addChild('Wicket', '60');
+
+// Save file
+$xml->asXML("cricket.xml");
+
+echo "XML Created";
+
+?>
