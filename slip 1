@@ -1,0 +1,65 @@
+🧾 SLIP 1 – Q1
+
+<html>
+<head>
+<title>Student Profile</title>
+</head>
+
+<body>
+
+<table border="1" width="100%">
+<tr>
+
+<!-- Column 1 -->
+<td width="30%">
+<a href="#">Home</a><br><br>
+<a href="#">Contact Us</a><br><br>
+<a href="#">About Us</a>
+</td>
+
+<!-- Column 2 -->
+<td>
+<h2>Student Profile</h2>
+Roll No: 101 <br>
+Name: Soham <br>
+Contact: 9876543210 <br>
+Class: TY Cyber <br>
+Area of Interest: Cyber Security <br><br>
+
+<img src="photo.jpg" width="100" height="100">
+</td>
+
+</tr>
+</table>
+
+</body>
+</html>
+
+🧾 SLIP 1 – Q2
+
+
+
+<html>
+<body>
+
+<form method="post">
+Username: <input type="text" name="username"><br><br>
+Password: <input type="password" name="password"><br><br>
+<input type="submit" value="Login">
+</form>
+
+<?php
+if($_POST){
+    $u = $_POST['username'];
+    $p = $_POST['password'];
+
+    if($u == $p){
+        echo "Welcome";
+    } else {
+        echo "Invalid username or password";
+    }
+}
+?>
+
+</body>
+</html>
