@@ -1,0 +1,83 @@
+🧾 SLIP 5 – Q1
+
+<html>
+<body>
+
+<h2>User Registration</h2>
+
+<form method="post">
+Full Name: <input type="text" name="name"><br><br>
+Contact No: <input type="text" name="contact"><br><br>
+Email: <input type="text" name="email"><br><br>
+Password: <input type="password" name="pass"><br><br>
+Confirm Password: <input type="password" name="cpass"><br><br>
+
+<input type="submit" value="Register">
+</form>
+
+<?php
+
+$conn = mysqli_connect("localhost","root","","test");
+
+if($_POST){
+
+    $name = $_POST['name'];
+    $contact = $_POST['contact'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+    $cpass = $_POST['cpass'];
+
+    if($pass == $cpass){
+
+        $enc = password_hash($pass, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO users(name,contact,email,password)
+                VALUES('$name','$contact','$email','$enc')";
+
+        mysqli_query($conn,$sql);
+
+        echo "Registration Successful";
+
+    } else {
+        echo "Password does not match";
+    }
+
+
+🧾 SLIP 5 – Q2
+
+<html>
+<body>
+
+<table border="1" width="100%">
+<tr>
+
+<td width="30%">
+<a href="#">Home</a><br><br>
+<a href="#">Contact Us</a><br><br>
+<a href="#">About Us</a>
+</td>
+
+<td>
+
+<h2>Student Profile</h2>
+
+Roll No: 101 <br>
+Name: Soham <br>
+Contact: 9876543210 <br>
+Class: TY Cyber <br>
+Area of Interest: Cyber Security <br><br>
+
+<img src="photo.jpg" width="100" height="100">
+
+</td>
+
+</tr>
+</table>
+
+</body>
+</html>
+}
+?>
+
+</body>
+</html>
