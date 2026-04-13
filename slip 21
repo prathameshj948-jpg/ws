@@ -1,0 +1,44 @@
+🧾 SLIP 21 – Q1
+
+<html>
+<body>
+
+<form method="post">
+Enter Number: <input type="text" name="num"><br><br>
+<input type="submit" value="Calculate">
+</form>
+
+<?php
+function factorial($n){
+    $fact = 1;
+    for($i=1; $i<=$n; $i++){
+        $fact *= $i;
+    }
+    return $fact;
+}
+
+if($_POST){
+    $num = $_POST['num'];
+    echo "Factorial = " . factorial($num);
+}
+?>
+
+</body>
+</html>
+
+
+
+🧾 SLIP 21 – Q2
+
+OWASP ZAP (Zed Attack Proxy)
+
+OWASP ZAP is a web security testing tool used to find vulnerabilities in web applications.
+
+Features:
+Intercepts HTTP requests
+Automated vulnerability scanning
+Detects SQL Injection, XSS
+Free and open-source
+Example:
+
+While testing a website, ZAP detects a Cross-Site Scripting (XSS) vulnerability in a search input field.
