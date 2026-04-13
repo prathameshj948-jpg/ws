@@ -1,0 +1,84 @@
+🧾 SLIP 11 – Q1
+
+<?php
+session_start();
+
+// correct credentials
+$correct_user = "admin";
+$correct_pass = "1234";
+
+// attempt count
+if(!isset($_SESSION['attempt'])){
+    $_SESSION['attempt'] = 0;
+}
+
+if($_POST){
+    $u = $_POST['username'];
+    $p = $_POST['password'];
+
+    if($u == $correct_user && $p == $correct_pass){
+        echo "<h2>Welcome</h2>";
+        session_destroy();
+    } else {
+        $_SESSION['attempt']++;
+
+        if($_SESSION['attempt'] < 3){
+            echo "Invalid Login. Attempts: " . $_SESSION['attempt'];
+        } else {
+            echo "Account Blocked";
+        }
+    }
+}
+?>
+
+<form method="post">
+Username: <input type="text" name="username"><br><br>
+Password: <input type="password" name="password"><br><br>
+<input type="submit" value="Login">
+</form>
+
+
+🧾 SLIP 11 – Q2
+
+Page 1 (employee.php)
+<form action="page2.php" method="post">
+Eno: <input type="text" name="eno"><br>
+Name: <input type="text" name="name"><br>
+Address: <input type="text" name="address"><br>
+<input type="submit" value="Next">
+</form>
+
+
+Page 2 (page2.php)
+<form action="page3.php" method="post">
+
+<input type="hidden" name="eno" value="<?php echo $_POST['eno']; ?>">
+<input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
+<input type="hidden" name="address" value="<?php echo $_POST['address']; ?>">
+
+Basic: <input type="text" name="basic"><br>
+DA: <input type="text" name="da"><br>
+HRA: <input type="text" name="hra"><br>
+
+<input type="submit" value="Submit">
+</form>
+
+Page 3 (page3.php)
+<?php
+
+$eno = $_POST['eno'];
+$name = $_POST['name'];
+$address = $_POST['address'];
+
+$basic = $_POST['basic'];
+$da = $_POST['da'];
+$hra = $_POST['hra'];
+
+$total = $basic + $da + $hra;
+
+echo "Eno: $eno <br>";
+echo "Name: $name <br>";
+echo "Address: $address <br>";
+echo "Total Salary: $total";
+
+?>
